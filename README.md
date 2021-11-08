@@ -12,4 +12,4 @@
 
 ![](/hint.png)
 
-##### Deadline: Please submit your work before 5:00 pm, 10-Nov-2021, Wednesday
+### Please submit your work before 5:00 pm, 10-Nov-2021, Wednesday
