@@ -10,4 +10,5 @@ import UIKit
 class OddCell: UICollectionViewCell {
     
     @IBOutlet weak var oddLbl: UILabel!
+        
 }

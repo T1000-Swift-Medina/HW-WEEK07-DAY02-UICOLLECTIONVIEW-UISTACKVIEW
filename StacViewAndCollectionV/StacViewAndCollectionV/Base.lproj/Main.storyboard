@@ -55,11 +55,11 @@
                                             </collectionViewCell>
                                         </cells>
                                     </collectionView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="8Pv-kF-2Ik">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="8Pv-kF-2Ik">
                                         <rect key="frame" x="0.0" y="409" width="414" height="409"/>
                                         <subviews>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0JC-42-o5o">
-                                                <rect key="frame" x="0.0" y="0.0" width="207" height="409"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="206" height="409"/>
                                                 <color key="backgroundColor" red="1" green="0.84598132559999994" blue="0.94512953150000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qMu-fP-n0h">
                                                     <size key="itemSize" width="128" height="128"/>
@@ -69,22 +69,24 @@
                                                 </collectionViewFlowLayout>
                                                 <cells>
                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="oddCellID" id="paL-n2-aa5" customClass="OddCell" customModule="StacViewAndCollectionV" customModuleProvider="target">
-                                                        <rect key="frame" x="39.5" y="0.0" width="128" height="128"/>
+                                                        <rect key="frame" x="39" y="0.0" width="128.5" height="52.5"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="NbJ-ou-Xfx" customClass="OddCell" customModule="StacViewAndCollectionV" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="gKr-7J-65h">
+                                                            <rect key="frame" x="0.0" y="0.0" width="128.5" height="52.5"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gpb-1n-seP">
-                                                                    <rect key="frame" x="43.5" y="54" width="41.5" height="20.5"/>
+                                                                    <rect key="frame" x="43.5" y="16" width="41.5" height="20.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
                                                             <constraints>
-                                                                <constraint firstItem="gpb-1n-seP" firstAttribute="centerX" secondItem="NbJ-ou-Xfx" secondAttribute="centerX" id="5Kw-mC-zT9"/>
-                                                                <constraint firstItem="gpb-1n-seP" firstAttribute="centerY" secondItem="NbJ-ou-Xfx" secondAttribute="centerY" id="sF6-x1-NFE"/>
+                                                                <constraint firstItem="gpb-1n-seP" firstAttribute="top" secondItem="gKr-7J-65h" secondAttribute="topMargin" constant="8" id="EPU-jB-9CI"/>
+                                                                <constraint firstItem="gpb-1n-seP" firstAttribute="leading" secondItem="gKr-7J-65h" secondAttribute="leadingMargin" constant="35.5" id="GF1-uk-oQb"/>
+                                                                <constraint firstItem="gpb-1n-seP" firstAttribute="centerY" secondItem="gKr-7J-65h" secondAttribute="centerY" id="NKc-Uj-Drq"/>
+                                                                <constraint firstItem="gpb-1n-seP" firstAttribute="centerX" secondItem="gKr-7J-65h" secondAttribute="centerX" id="gkh-WY-lvs"/>
                                                             </constraints>
                                                         </collectionViewCellContentView>
                                                         <connections>
@@ -94,7 +96,7 @@
                                                 </cells>
                                             </collectionView>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="SY5-A1-e8v">
-                                                <rect key="frame" x="207" y="0.0" width="207" height="409"/>
+                                                <rect key="frame" x="208" y="0.0" width="206" height="409"/>
                                                 <color key="backgroundColor" red="0.58260526310000005" green="0.78039215689999997" blue="0.63250304980000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="FcE-vP-UG6">
                                                     <size key="itemSize" width="128" height="128"/>
@@ -104,7 +106,7 @@
                                                 </collectionViewFlowLayout>
                                                 <cells>
                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="evenCellID" id="noi-49-3mr" customClass="EvenCell" customModule="StacViewAndCollectionV" customModuleProvider="target">
-                                                        <rect key="frame" x="39.5" y="0.0" width="128" height="128"/>
+                                                        <rect key="frame" x="39" y="0.0" width="128" height="128"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="kbw-Qw-npb">
                                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
@@ -142,6 +144,11 @@
                             <constraint firstItem="hUL-2p-j1e" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="gKc-tn-NAV"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="evenCollection" destination="SY5-A1-e8v" id="pbp-4S-zP3"/>
+                        <outlet property="mainCollection" destination="uMm-cd-lvu" id="Qbz-kI-WYh"/>
+                        <outlet property="oddCollection" destination="0JC-42-o5o" id="ubL-t0-bby"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

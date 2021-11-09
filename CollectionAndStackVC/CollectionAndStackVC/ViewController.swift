@@ -87,22 +87,22 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                   oddCollection.delegate = self
                   oddCollection.reloadData()
                 }
-//        case evenConllection :
-//            if indexPath.row % 2 == 0 {
-//                evenArray.append(indexPath.row + 1)
-//
-//                evenConllection.dataSource = self
-//                evenConllection.delegate = self
-//                evenConllection.reloadData()
-//            }
-//        case oddCollection:
-//            if indexPath.row % 2 == 0 {
-//                oddArray.append(indexPath.row + 1)
-//
-//                oddCollection.dataSource = self
-//                oddCollection.delegate = self
-//                oddCollection.reloadData()
-//            }
+        case evenConllection :
+            if indexPath.row % 2 == 0 {
+                evenArray.append(indexPath.row + 1)
+
+                evenConllection.dataSource = self
+                evenConllection.delegate = self
+                evenConllection.reloadData()
+            }
+        case oddCollection:
+            if indexPath.row % 2 == 0 {
+                oddArray.append(indexPath.row + 1)
+
+                oddCollection.dataSource = self
+                oddCollection.delegate = self
+                oddCollection.reloadData()
+            }
         default:
             break
         }
