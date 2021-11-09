@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -67,25 +68,32 @@
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellID2" id="yfI-wz-CG4" customClass="CollectionViewCell" customModule="HW_HW_Week7_Day2_CollectionView_StackView_Week7_Day2_CollectionView_StackView" customModuleProvider="target">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellID2" id="yfI-wz-CG4" customClass="myCellBlue" customModule="HW_HW_Week7_Day2_CollectionView_StackView_Week7_Day2_CollectionView_StackView" customModuleProvider="target">
                                                         <rect key="frame" x="39.5" y="0.0" width="128" height="128"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="rH3-CN-C8H">
                                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Un5-2D-960">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TWU-9m-alh">
                                                                     <rect key="frame" x="43.5" y="54" width="41.5" height="20.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
+                                                            <color key="backgroundColor" systemColor="systemYellowColor"/>
                                                             <constraints>
-                                                                <constraint firstItem="Un5-2D-960" firstAttribute="centerY" secondItem="rH3-CN-C8H" secondAttribute="centerY" id="J2I-rf-bnw"/>
-                                                                <constraint firstItem="Un5-2D-960" firstAttribute="centerX" secondItem="rH3-CN-C8H" secondAttribute="centerX" id="Yjn-Fw-LRF"/>
+                                                                <constraint firstItem="TWU-9m-alh" firstAttribute="centerY" secondItem="rH3-CN-C8H" secondAttribute="centerY" id="IjD-m9-t95"/>
+                                                                <constraint firstItem="TWU-9m-alh" firstAttribute="centerX" secondItem="rH3-CN-C8H" secondAttribute="centerX" id="V2K-Gf-C83"/>
+                                                                <constraint firstItem="TWU-9m-alh" firstAttribute="centerX" secondItem="rH3-CN-C8H" secondAttribute="centerX" id="uQN-Cy-Cgh"/>
+                                                                <constraint firstItem="TWU-9m-alh" firstAttribute="centerY" secondItem="rH3-CN-C8H" secondAttribute="centerY" id="zrn-hh-EhB"/>
                                                             </constraints>
                                                         </collectionViewCellContentView>
+                                                        <connections>
+                                                            <outlet property="label2" destination="TWU-9m-alh" id="9pL-mv-Th6"/>
+                                                            <outlet property="label3" destination="TWU-9m-alh" id="mJa-Ub-fTq"/>
+                                                        </connections>
                                                     </collectionViewCell>
                                                 </cells>
                                             </collectionView>
@@ -99,7 +107,7 @@
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellID3" id="ET5-Ju-etY" customClass="CollectionViewCell" customModule="HW_HW_Week7_Day2_CollectionView_StackView_Week7_Day2_CollectionView_StackView" customModuleProvider="target">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellID3" id="ET5-Ju-etY" customClass="myCellRed" customModule="HW_HW_Week7_Day2_CollectionView_StackView_Week7_Day2_CollectionView_StackView" customModuleProvider="target">
                                                         <rect key="frame" x="39.5" y="0.0" width="128" height="128"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Bkc-JB-7QG">
@@ -114,10 +122,15 @@
                                                                 </label>
                                                             </subviews>
                                                             <constraints>
-                                                                <constraint firstItem="Ykw-l0-Trk" firstAttribute="centerX" secondItem="Bkc-JB-7QG" secondAttribute="centerX" id="3bU-42-Mxo"/>
-                                                                <constraint firstItem="Ykw-l0-Trk" firstAttribute="centerY" secondItem="Bkc-JB-7QG" secondAttribute="centerY" id="sIq-jg-pvf"/>
+                                                                <constraint firstItem="Ykw-l0-Trk" firstAttribute="centerY" secondItem="Bkc-JB-7QG" secondAttribute="centerY" id="GCs-gi-nGB"/>
+                                                                <constraint firstItem="Ykw-l0-Trk" firstAttribute="centerX" secondItem="Bkc-JB-7QG" secondAttribute="centerX" id="pPW-Dc-FyC"/>
                                                             </constraints>
                                                         </collectionViewCellContentView>
+                                                        <color key="backgroundColor" red="0.66274509800000003" green="0.20000000000000001" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <connections>
+                                                            <outlet property="label2" destination="Ykw-l0-Trk" id="hOf-P6-8TZ"/>
+                                                            <outlet property="label3" destination="Ykw-l0-Trk" id="2cL-9X-yDp"/>
+                                                        </connections>
                                                     </collectionViewCell>
                                                 </cells>
                                             </collectionView>
@@ -147,4 +160,9 @@
             <point key="canvasLocation" x="18.840579710144929" y="79.6875"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
