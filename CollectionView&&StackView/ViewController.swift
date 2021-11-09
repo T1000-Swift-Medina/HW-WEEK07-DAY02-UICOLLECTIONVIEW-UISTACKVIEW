@@ -23,9 +23,10 @@ class ViewController: UIViewController ,UICollectionViewDelegate , UICollectionV
         // Do any additional setup after loading the view.
         mainCv.delegate = self
         mainCv.dataSource = self
-        greenCv.reloadData()
-        redCv.reloadData()
-
+        greenCv.delegate = self
+        greenCv.dataSource = self
+        redCv.delegate = self
+        redCv.dataSource = self
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -37,11 +38,7 @@ class ViewController: UIViewController ,UICollectionViewDelegate , UICollectionV
         
         else {return redArray.count}
     }
-    override func viewWillAppear(_ animated: Bool) {
-        greenCv.reloadData()
-        redCv.reloadData()
 
-    }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == mainCv {
@@ -51,32 +48,32 @@ class ViewController: UIViewController ,UICollectionViewDelegate , UICollectionV
 
         } else if collectionView == greenCv{
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "greenCell", for: indexPath ) as! greenCVcell
-                       cell.greenLabel.text = greenArray[indexPath.row]
             return cell
 
         } else {
         let cell = redCv.dequeueReusableCell(withReuseIdentifier: "redCell", for: indexPath ) as! redCVcell
-                       cell.redLabel.text = redArray[indexPath.row]
             return cell
             
         }
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-      
-        for i in originArray {
-            if i == "🟢"{
-                greenArray.append(i)
-
-            }}
-      
-        for j in originArray {
-            if j == "🔴"{
-                redArray.append(j)
-            }}
+        if collectionView == mainCv  {
+                 let cell = mainCv.cellForItem(at: indexPath) as! mainCVCell
+                 
+            if cell.mainLabel.text == "🟢" {
+                     greenArray.append(String(indexPath.row))
+                     originArray.remove(at: indexPath.row)
+                     mainCv.reloadData()
+                     greenCv.reloadData()
+                 } else {
+                         redArray.append(String(indexPath.row))
+                         originArray.remove(at: indexPath.row)
+                         mainCv.reloadData()
+                         redCv.reloadData()
+                 }}
         
         print(redArray,greenArray)
-        greenCv.reloadData()
-        redCv.reloadData()
+
 
                
     }
