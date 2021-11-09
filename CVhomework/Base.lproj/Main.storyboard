@@ -76,7 +76,7 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="svy-oZ-TB1">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="redContainer" id="svy-oZ-TB1" customClass="RedCollectionCell" customModule="CVhomework" customModuleProvider="target">
                                                 <rect key="frame" x="34.5" y="0.0" width="128" height="128"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="fFE-J9-SNS">
@@ -95,6 +95,9 @@
                                                         <constraint firstItem="efc-XG-3zp" firstAttribute="centerY" secondItem="fFE-J9-SNS" secondAttribute="centerY" id="WlA-1L-GpD"/>
                                                     </constraints>
                                                 </collectionViewCellContentView>
+                                                <connections>
+                                                    <outlet property="redBall" destination="efc-XG-3zp" id="MYd-by-b3c"/>
+                                                </connections>
                                             </collectionViewCell>
                                         </cells>
                                     </collectionView>
@@ -108,7 +111,7 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="EUq-vx-5c0">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BlueContainer" id="EUq-vx-5c0" customClass="BlueCollectionCell" customModule="CVhomework" customModuleProvider="target">
                                                 <rect key="frame" x="34.5" y="0.0" width="128" height="128"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="7ld-uE-dO0">
@@ -127,6 +130,9 @@
                                                         <constraint firstItem="upI-mp-iYi" firstAttribute="centerY" secondItem="7ld-uE-dO0" secondAttribute="centerY" id="ceH-1h-qVp"/>
                                                     </constraints>
                                                 </collectionViewCellContentView>
+                                                <connections>
+                                                    <outlet property="blueBall" destination="upI-mp-iYi" id="Ls4-rl-ZXJ"/>
+                                                </connections>
                                             </collectionViewCell>
                                         </cells>
                                     </collectionView>

@@ -14,6 +14,8 @@
 		F214EAC9273B0C9300E8D39A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F214EAC8273B0C9300E8D39A /* Assets.xcassets */; };
 		F214EACC273B0C9300E8D39A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F214EACA273B0C9300E8D39A /* LaunchScreen.storyboard */; };
 		F214EAD4273B0F1000E8D39A /* mainCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F214EAD3273B0F1000E8D39A /* mainCollectionCell.swift */; };
+		F214EAD6273B1A8C00E8D39A /* RedCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F214EAD5273B1A8C00E8D39A /* RedCollectionCell.swift */; };
+		F214EAD8273B1B0200E8D39A /* BlueCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F214EAD7273B1B0200E8D39A /* BlueCollectionCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		F214EACB273B0C9300E8D39A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F214EACD273B0C9300E8D39A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F214EAD3273B0F1000E8D39A /* mainCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainCollectionCell.swift; sourceTree = "<group>"; };
+		F214EAD5273B1A8C00E8D39A /* RedCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedCollectionCell.swift; sourceTree = "<group>"; };
+		F214EAD7273B1B0200E8D39A /* BlueCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueCollectionCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,8 +65,10 @@
 				F214EABF273B0C9300E8D39A /* AppDelegate.swift */,
 				F214EAC1273B0C9300E8D39A /* SceneDelegate.swift */,
 				F214EAC3273B0C9300E8D39A /* ViewController.swift */,
-				F214EAC5273B0C9300E8D39A /* Main.storyboard */,
+				F214EAD5273B1A8C00E8D39A /* RedCollectionCell.swift */,
+				F214EAD7273B1B0200E8D39A /* BlueCollectionCell.swift */,
 				F214EAD3273B0F1000E8D39A /* mainCollectionCell.swift */,
+				F214EAC5273B0C9300E8D39A /* Main.storyboard */,
 				F214EAC8273B0C9300E8D39A /* Assets.xcassets */,
 				F214EACA273B0C9300E8D39A /* LaunchScreen.storyboard */,
 				F214EACD273B0C9300E8D39A /* Info.plist */,
@@ -144,7 +150,9 @@
 				F214EAD4273B0F1000E8D39A /* mainCollectionCell.swift in Sources */,
 				F214EAC4273B0C9300E8D39A /* ViewController.swift in Sources */,
 				F214EAC0273B0C9300E8D39A /* AppDelegate.swift in Sources */,
+				F214EAD8273B1B0200E8D39A /* BlueCollectionCell.swift in Sources */,
 				F214EAC2273B0C9300E8D39A /* SceneDelegate.swift in Sources */,
+				F214EAD6273B1A8C00E8D39A /* RedCollectionCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
