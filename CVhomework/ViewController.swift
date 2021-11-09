@@ -33,14 +33,21 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     
     
+    
+    
     @IBOutlet weak var mainCV: UICollectionView!
+    
+    @IBOutlet weak var blueCollection: UICollectionView!
+    
+    @IBOutlet weak var redCollection: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
         mainCV.delegate = self
         mainCV.dataSource = self
-        
+       
     }
 
 
 }
+
 

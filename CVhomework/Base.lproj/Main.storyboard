@@ -156,7 +156,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="blueCollection" destination="Tv2-pI-fMg" id="RZx-a7-Iha"/>
                         <outlet property="mainCV" destination="AhQ-jD-p2L" id="uM8-J5-zcW"/>
+                        <outlet property="redCollection" destination="hNU-e9-W9x" id="moh-OK-Mez"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
