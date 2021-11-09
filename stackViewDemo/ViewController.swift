@@ -7,45 +7,50 @@
 
 import UIKit
 
+
+
 class ViewController: UIViewController , UICollectionViewDelegate , UICollectionViewDataSource {
+    
+    
+    @IBOutlet weak var cvMain: UICollectionView!
+    @IBOutlet weak var blueCollection: UICollectionView!
+    @IBOutlet weak var redCollection: UICollectionView!
+    
+    
+    var originalarray = ["🔴","🔵","🔴","🔵","🔴","🔵","🔴","🔵","🔴","🔵","🔴","🔵","🔴","🔵","🔴","🔵","🔴","🔵","🔴","🔵","🔴","🔵","🔴","🔵","🔴","🔵","🔴","🔵","🔴","🔵","🔴","🔵"]
+    
+    var bluearray = [""]
+    var redarray = [""]
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 100
+        return originalarray.count
         
     }
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        
+
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "mycellID", for: indexPath) as! Mycell
         
-        let rand = Int.random(in: 1...20)
-        
-        if (indexPath.row >= rand) {
-            cell.title.text = String("🔵")
-            
-        }
-        else {
-            cell.title.text = String("🔴")
-        }
+        cell.title.text = originalarray[indexPath.row]
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-//        if cvMain == CollectionView1 {
-//                   self.performSegueWithIdentifier("fromFirstCollectionView", sender: nil);
-//               } else if collectionView == collectionView2 {
-//                   // from other CollectionView
-//               }
-        
-        let cell = indexPath.item
-        print(cell)
-        
-        
-    }
-    
+        if  cvMain == collectionView {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "mycellID", for: indexPath ) as! Mycell
+            
+            originalarray.remove(at: indexPath.row)
+            cvMain.reloadData()
+            print(originalarray)
+        } else if blueCollection == collectionView {
 
-    @IBOutlet weak var cvMain: UICollectionView!
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CellBlue", for: indexPath ) as! BlueCollectionViewCell
+
+        } else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CellRed", for: indexPath ) as! RedCollectionViewCell
+        }
+    
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,5 +59,7 @@ class ViewController: UIViewController , UICollectionViewDelegate , UICollection
         cvMain.delegate = self
         cvMain.dataSource = self
     }
+    
+    
 }
 

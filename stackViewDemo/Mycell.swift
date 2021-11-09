@@ -10,4 +10,11 @@ import UIKit
 class Mycell: UICollectionViewCell {
     
     @IBOutlet weak var title: UILabel!
+    
+    
+    
+    
+    
+    
+    
 }
