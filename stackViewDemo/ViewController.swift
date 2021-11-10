@@ -68,18 +68,18 @@ class ViewController: UIViewController , UICollectionViewDelegate , UICollection
                     originalarray.remove(at: indexPath.row)
                     cvMain.reloadData()
                     redCollection.reloadData()
-            }}
-
-            if collectionView == blueCollection {
+            }} else if collectionView == blueCollection {
                 bluearray.remove(at: indexPath.row)
                 originalarray.append("🔵")
                 blueCollection.reloadData()
                 cvMain.reloadData()
             } else if collectionView == redCollection {
-                redarray.remove(at: indexPath.row)
+                redarray.remove(at:  indexPath.row)
                 originalarray.append("🔴")
                 redCollection.reloadData()
                 cvMain.reloadData()
+            } else {
+                print("logic check")
             }
             
                 
