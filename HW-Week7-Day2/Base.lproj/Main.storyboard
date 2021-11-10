@@ -146,8 +146,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="MainCV" destination="7tp-Fh-ccs" id="4sM-GM-j7h"/>
                         <outlet property="blueCollection" destination="dNp-Bp-4Y0" id="bxc-S2-lbe"/>
+                        <outlet property="mainCV" destination="7tp-Fh-ccs" id="4sM-GM-j7h"/>
                         <outlet property="redCollection" destination="Qmf-mw-LeZ" id="nWT-tt-bPQ"/>
                     </connections>
                 </viewController>
