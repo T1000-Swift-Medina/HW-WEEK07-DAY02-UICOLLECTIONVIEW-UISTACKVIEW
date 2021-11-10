@@ -8,6 +8,9 @@
 import UIKit
 
 class mainCollectionCell: UICollectionViewCell {
+    
     @IBOutlet weak var firstCell: UILabel!
     
+    @IBOutlet weak var blueCell: UILabel!
+    @IBOutlet weak var redCell: UILabel!
 }

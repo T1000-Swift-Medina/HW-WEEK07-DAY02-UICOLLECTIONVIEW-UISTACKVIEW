@@ -8,32 +8,54 @@
 import UIKit
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+    var arrayMain = [Int] ()
+    var arrayBlue = [Int] ()
+    var arrayRed = [Int] ()
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 30
+        if collectionView == mainCV {
+            return arrayMain.count
+        }else if collectionView == redCollection {
+            return arrayRed.count
+        }else{
+            return arrayBlue.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "mainCell", for: indexPath)as! mainCollectionCell
-
-//      let balls : [String:Int] = ["Blue":0 , "Red":1]
-//        let randomBalls = balls.randomElement()
-
-        let mainBall = Int.random(in: 0...1)
-        var arrayBlue : [Int] = []
-        var arrayRed : [Int] = []
-        if (mainBall == 0){
-        cell.firstCell.text = "🔴"
-            arrayRed.append(indexPath.row)
+        if collectionView == redCollection {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "redID", for: indexPath)as! mainCollectionCell
+            cell.redCell.text = "🔴"
+            return cell
+        }else if collectionView == mainCV {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "mainCell", for: indexPath)as! mainCollectionCell
+            if (arrayMain [indexPath.row] == 0 ){
+                cell.firstCell.text = "🔴"
+                return cell
+            }else{
+                cell.firstCell.text = "🔵"
+                return cell
+            }
         }else{
-            cell.firstCell.text = "🔵"
-            arrayBlue.append(indexPath.row)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BlueID", for: indexPath)as! mainCollectionCell
+            cell.blueCell.text = "🔵"
+            return cell
         }
-        return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == mainCV {
+            arrayRed.append(arrayMain[indexPath.row])
+            arrayMain.remove(at: indexPath.row)
+        }else {
+            arrayBlue.append(arrayMain[indexPath.row])
+            arrayMain.remove(at: indexPath.row)
+        }
+        mainCV.reloadData()
+        redCollection.reloadData()
+        blueCollection.reloadData()
     }
     
-    
-    
-    
+
     
     @IBOutlet weak var mainCV: UICollectionView!
     
@@ -44,10 +66,18 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         super.viewDidLoad()
         mainCV.delegate = self
         mainCV.dataSource = self
-       
+        blueCollection.delegate = self
+        blueCollection.dataSource = self
+        redCollection.delegate = self
+        redCollection.dataSource = self
+        
+        
+        for _ in 0 ... 100 {
+            arrayMain.append(Int.random(in: 0...1))
+        }
     }
 
 
+
+
 }
-
-
