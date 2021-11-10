@@ -10,7 +10,7 @@ import UIKit
 class MyCollCell: UICollectionViewCell {
     
     @IBOutlet weak var allBalls: UILabel!
-    @IBOutlet weak var blueBalls: UILabel!
-    @IBOutlet weak var redBalls: UILabel!
+    @IBOutlet weak var soccerBalls: UILabel!
+    @IBOutlet weak var basketBalls: UILabel!
     
 }
