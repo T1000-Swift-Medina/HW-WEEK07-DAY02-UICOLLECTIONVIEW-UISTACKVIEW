@@ -20,7 +20,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="egH-IC-0jK">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ttI-r4-5Ya">
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ttI-r4-5Ya" userLabel="mineCV">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="409"/>
                                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ZUh-5c-aOr">
@@ -115,7 +115,7 @@
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MZS-lR-7vh">
-                                                                    <rect key="frame" x="43" y="54" width="42" height="21"/>
+                                                                    <rect key="frame" x="43.5" y="54" width="41.5" height="20.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -151,7 +151,7 @@
                     </view>
                     <connections>
                         <outlet property="blueCollection" destination="stV-k6-h23" id="EuO-2M-5Vf"/>
-                        <outlet property="cvMain" destination="ttI-r4-5Ya" id="EFJ-Rr-mCB"/>
+                        <outlet property="mineCV" destination="ttI-r4-5Ya" id="EFJ-Rr-mCB"/>
                         <outlet property="redCollection" destination="ZFG-U6-vao" id="HUR-8G-PXJ"/>
                     </connections>
                 </viewController>

@@ -12,31 +12,31 @@ import UIKit
 class ViewController: UIViewController , UICollectionViewDelegate , UICollectionViewDataSource {
     
     
-    @IBOutlet weak var cvMain: UICollectionView!
+    @IBOutlet weak var mineCV: UICollectionView!
     @IBOutlet weak var blueCollection: UICollectionView!
     @IBOutlet weak var redCollection: UICollectionView!
     
     
-    var originalarray = ["🔴","🔵","🔴","🔵","🔴","🔵","🔴","🔵","🔴","🔵","🔴","🔵","🔴","🔵","🔴","🔵","🔴","🔵","🔴","🔵","🔴","🔵","🔴","🔵","🔴","🔵","🔴","🔵","🔴","🔵","🔴","🔵"]
+    var originalArray = ["🔴","🔵","🔴","🔵","🔴","🔵","🔴","🔵","🔴","🔵","🔴","🔵","🔴","🔵","🔴","🔵","🔴","🔵","🔴","🔵","🔴","🔵","🔴","🔵","🔴","🔵","🔴","🔵","🔴","🔵","🔴","🔵"]
     
-    var bluearray = [String]()
-    var redarray = [String]()
+    var blueArray = [String]()
+    var redArray = [String]()
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if  collectionView == cvMain {
-            return originalarray.count
+        if  collectionView == mineCV {
+            return originalArray.count
         } else if collectionView == blueCollection {
-            return bluearray.count
+            return blueArray.count
         } else {
-            return redarray.count
+            return redArray.count
         }
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        if  collectionView == cvMain {
+        if  collectionView == mineCV {
             let cell1 = collectionView.dequeueReusableCell(withReuseIdentifier: "mycellID", for: indexPath) as! Mycell
             
-            cell1.title.text = originalarray[indexPath.row]
+            cell1.title.text = originalArray[indexPath.row]
             return cell1
             
         } else if collectionView == blueCollection {
@@ -53,31 +53,34 @@ class ViewController: UIViewController , UICollectionViewDelegate , UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if collectionView == cvMain  {
-            let cell = cvMain.cellForItem(at: indexPath) as! Mycell
+        if collectionView == mineCV  {
+            let cell = mineCV.cellForItem(at: indexPath) as! Mycell
            
             
             if cell.title.text == "🔵" {
-                bluearray.append(String(indexPath.row))
-                originalarray.remove(at: indexPath.row)
-                cvMain.reloadData()
+                blueArray.append(String(indexPath.row))
+                originalArray.remove(at: indexPath.row)
+                mineCV.reloadData()
                 blueCollection.reloadData()
-                print(bluearray)
-            } else {
-                    redarray.append(String(indexPath.row))
-                    originalarray.remove(at: indexPath.row)
-                    cvMain.reloadData()
+                print(blueArray)
+            } else  {
+                    redArray.append(String(indexPath.row))
+                    originalArray.remove(at: indexPath.row)
+                    mineCV.reloadData()
                     redCollection.reloadData()
-            }} else if collectionView == blueCollection {
-                bluearray.remove(at: indexPath.row)
-                originalarray.append("🔵")
+            }
+            
+        }
+        if collectionView == blueCollection {
+                blueArray.remove(at: indexPath.row)
+                originalArray.append("🔵")
                 blueCollection.reloadData()
-                cvMain.reloadData()
+                mineCV.reloadData()
             } else if collectionView == redCollection {
-                redarray.remove(at:  indexPath.row)
-                originalarray.append("🔴")
+                redArray.remove(at:  indexPath.row)
+                originalArray.append("🔴")
                 redCollection.reloadData()
-                cvMain.reloadData()
+                mineCV.reloadData()
             } else {
                 print("logic check")
             }
@@ -94,8 +97,8 @@ class ViewController: UIViewController , UICollectionViewDelegate , UICollection
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        cvMain.delegate = self
-        cvMain.dataSource = self
+        mineCV.delegate = self
+        mineCV.dataSource = self
         blueCollection.delegate = self
         blueCollection.dataSource = self
         redCollection.delegate = self
