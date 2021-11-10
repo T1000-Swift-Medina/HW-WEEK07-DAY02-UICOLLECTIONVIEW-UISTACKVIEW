@@ -55,6 +55,7 @@ class ViewController: UIViewController , UICollectionViewDelegate , UICollection
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == cvMain  {
             let cell = cvMain.cellForItem(at: indexPath) as! Mycell
+           
             
             if cell.title.text == "🔵" {
                 bluearray.append(String(indexPath.row))
@@ -67,14 +68,26 @@ class ViewController: UIViewController , UICollectionViewDelegate , UICollection
                     originalarray.remove(at: indexPath.row)
                     cvMain.reloadData()
                     redCollection.reloadData()
-                }
-                
+            }}
+
+            if collectionView == blueCollection {
+                bluearray.remove(at: indexPath.row)
+                originalarray.append("🔵")
+                blueCollection.reloadData()
+                cvMain.reloadData()
+            } else if collectionView == redCollection {
+                redarray.remove(at: indexPath.row)
+                originalarray.append("🔴")
+                redCollection.reloadData()
+                cvMain.reloadData()
+            }
+            
                 
             }
             
-        }
-
         
+
+
     
     
     override func viewDidLoad() {
