@@ -11,73 +11,66 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     @IBOutlet weak var CollectionView11: UICollectionView!
     
-    @IBOutlet weak var collectionRed: UICollectionView!
+    @IBOutlet weak var CollectionRed: UICollectionView!
     
-    @IBOutlet weak var collectionBlue: UICollectionView!
+    @IBOutlet weak var CollectionBlue: UICollectionView!
 
-    var arrture = [String] ()
-    var arryfolse: [String] = []
-    var arrbool : [String] = []
+    var arryBool = [String] ()
+    var arryTrue : [String] = []
+    var arryFolse: [String] = []
+   
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if (collectionView == CollectionView11){
-              return arrture.count
-            }else if (collectionView == collectionRed ){
-                return arryfolse.count
-            } else if collectionView == collectionBlue {
-                return arrbool.count
-            }
-            return 0
-          }
+              return arryBool.count
+            }else if (collectionView == CollectionRed ){
+                return arryFolse.count
+            } else  {
+                return arryTrue.count
+            }}
+          
     override func viewDidLoad() {
            super.viewDidLoad()
-   
            CollectionView11.delegate = self
            CollectionView11.dataSource = self
-        collectionBlue.delegate = self
-        collectionBlue.dataSource = self
-        collectionRed.delegate = self
-        collectionRed.dataSource = self
-        for n in 1...50{
-            arrture.append(String(n))
+        CollectionBlue.delegate = self
+        CollectionBlue.dataSource = self
+        CollectionRed.delegate = self
+        CollectionRed.dataSource = self
+        
+        for B in 1...28{
+            arryBool.append(String(B))
         }
-        collectionBlue.register(myCellBlue.self, forCellWithReuseIdentifier: "cellID2")
-           collectionRed.register(myCellRed.self, forCellWithReuseIdentifier: "cellID3")
-
+        
+        CollectionBlue.register(myCellBlue.self, forCellWithReuseIdentifier: "cellID2")
+           CollectionRed.register(myCellRed.self, forCellWithReuseIdentifier: "cellID3")
        }
     
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let cell1 = Int.random(in: 0...1)
-
-        if (collectionView == collectionRed){
-              let cell2 = collectionRed.dequeueReusableCell(withReuseIdentifier: "cellID3", for: indexPath) as! myCellRed
-              cell2.backgroundColor = .red
+        if (collectionView == CollectionRed){
+              let cell2 = CollectionRed.dequeueReusableCell(withReuseIdentifier: "cellID3", for: indexPath) as! myCellRed
+              cell2.backgroundColor = .link
               cell2.layer.cornerRadius = 22
-
               return cell2
             }
-        else if (collectionView == collectionBlue){
-              let cell3 = collectionBlue.dequeueReusableCell(withReuseIdentifier: "cellID2", for: indexPath) as! myCellBlue
-            cell3.backgroundColor = .darkText
-              cell3.layer.cornerRadius = 22
+        else if (collectionView == CollectionBlue){
+              let cell3 = CollectionBlue.dequeueReusableCell(withReuseIdentifier: "cellID2", for: indexPath) as! myCellBlue
+            cell3.backgroundColor = .cyan
+//              cell3.layer.cornerRadius = 22
               return cell3
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellID1", for: indexPath) as! CollectionViewCell
             if indexPath.row % 2 == 0 {
                 cell.backgroundColor = .cyan
-                cell.layer.cornerRadius = 22
+//                cell.layer.cornerRadius = 22
                 cell.label1.text = "✅"}
-    //            arrture.append(indexPath.row)
-                
-            else {
+            else  {
                 cell.backgroundColor = .link
                       cell.layer.cornerRadius = 22
                 cell.label1.text = "❌"
-    //            arryfolse.append(indexPath.row)
             }
             return cell
-
+            
         }
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -85,25 +78,40 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         if collectionView == CollectionView11 {
             let cell4 = CollectionView11.cellForItem(at: indexPath)as!CollectionViewCell
             if cell4.label1.text == "✅" {
-                arryfolse.append(String(indexPath.row))
-                arrture.remove(at: indexPath.row)
+                arryTrue.append(String(indexPath.row))
+                arryBool.remove(at: indexPath.row )
                        CollectionView11.deleteItems(at: [indexPath])
-                       collectionBlue.reloadData()
+                       CollectionBlue.reloadData()
                        CollectionView11.reloadData()
             }
-            else if cell4.label1.text == "❌"{
-                arrbool.append(String(indexPath.row))
-                arrture.remove(at: indexPath.row)
+            else if cell4.label1.text == "❌" {
+                arryFolse.append(String(indexPath.row))
+                arryBool.remove(at: indexPath.row )
                 CollectionView11.deleteItems(at: [indexPath])
-                collectionRed.reloadData()
+                CollectionRed.reloadData()
                 CollectionView11.reloadData()
             }
         }
+        if collectionView == CollectionRed {
+            let cell4 = CollectionView11.cellForItem(at: indexPath)as!CollectionViewCell
+            if cell4.label1.text == "✅" {
+                arryTrue.remove(at: indexPath.row )
+                arryBool.append(String(indexPath.row))
+                       CollectionView11.deleteItems(at: [indexPath])
+                       CollectionBlue.reloadData()
+                       CollectionView11.reloadData()
+            }
     }
-}
-    
-
-
+        if collectionView == CollectionBlue {
+        let cell4 = CollectionView11.cellForItem(at: indexPath)as!CollectionViewCell
+        if cell4.label1.text == "❌" {
+            arryFolse.remove(at: indexPath.row )
+            arryBool.append(String(indexPath.row))
+                   CollectionView11.deleteItems(at: [indexPath])
+                   CollectionBlue.reloadData()
+                   CollectionView11.reloadData()
+        }
+        }}}
 class myCellBlue : UICollectionViewCell {
     @IBOutlet weak var label2: UILabel!
     

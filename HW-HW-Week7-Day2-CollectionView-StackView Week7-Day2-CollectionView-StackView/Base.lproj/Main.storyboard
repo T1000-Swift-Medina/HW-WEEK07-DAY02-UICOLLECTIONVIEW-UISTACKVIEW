@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -75,14 +74,14 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TWU-9m-alh">
-                                                                    <rect key="frame" x="43.5" y="54" width="41.5" height="20.5"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="✅" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TWU-9m-alh">
+                                                                    <rect key="frame" x="52.5" y="54" width="23" height="20.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
-                                                            <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                                            <color key="backgroundColor" red="0.99607843139999996" green="0.97647058819999999" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <constraints>
                                                                 <constraint firstItem="TWU-9m-alh" firstAttribute="centerY" secondItem="rH3-CN-C8H" secondAttribute="centerY" id="IjD-m9-t95"/>
                                                                 <constraint firstItem="TWU-9m-alh" firstAttribute="centerX" secondItem="rH3-CN-C8H" secondAttribute="centerX" id="V2K-Gf-C83"/>
@@ -114,8 +113,8 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ykw-l0-Trk">
-                                                                    <rect key="frame" x="43.5" y="54" width="41.5" height="20.5"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="❌" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ykw-l0-Trk">
+                                                                    <rect key="frame" x="52.5" y="54" width="23" height="20.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -126,7 +125,7 @@
                                                                 <constraint firstItem="Ykw-l0-Trk" firstAttribute="centerX" secondItem="Bkc-JB-7QG" secondAttribute="centerX" id="pPW-Dc-FyC"/>
                                                             </constraints>
                                                         </collectionViewCellContentView>
-                                                        <color key="backgroundColor" red="0.66274509800000003" green="0.20000000000000001" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="backgroundColor" red="0.53333333329999999" green="0.87843137250000003" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <connections>
                                                             <outlet property="label2" destination="Ykw-l0-Trk" id="hOf-P6-8TZ"/>
                                                             <outlet property="label3" destination="Ykw-l0-Trk" id="2cL-9X-yDp"/>
@@ -150,9 +149,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="CollectionBlue" destination="KuR-Le-wWn" id="sgX-Ug-aMV"/>
+                        <outlet property="CollectionRed" destination="2tO-Ra-TVL" id="sxr-NJ-S4X"/>
                         <outlet property="CollectionView11" destination="BNj-hk-Hym" id="QxM-j3-iDG"/>
-                        <outlet property="collectionBlue" destination="KuR-Le-wWn" id="sgX-Ug-aMV"/>
-                        <outlet property="collectionRed" destination="2tO-Ra-TVL" id="sxr-NJ-S4X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -160,9 +159,4 @@
             <point key="canvasLocation" x="18.840579710144929" y="79.6875"/>
         </scene>
     </scenes>
-    <resources>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-    </resources>
 </document>
