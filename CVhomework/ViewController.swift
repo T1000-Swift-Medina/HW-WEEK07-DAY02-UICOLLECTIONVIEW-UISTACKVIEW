@@ -44,19 +44,26 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == mainCV {
+            print ("indexpath : \( indexPath.row) main array : \(arrayMain[indexPath.row]) " )
+            if (arrayMain[indexPath.row] == 0){
             arrayRed.append(arrayMain[indexPath.row])
             arrayMain.remove(at: indexPath.row)
-        }else {
+            } else {
             arrayBlue.append(arrayMain[indexPath.row])
             arrayMain.remove(at: indexPath.row)
+            }
+        }else if collectionView == redCollection{
+            arrayMain.append(arrayRed[indexPath.row])
+            arrayRed.remove(at: indexPath.row)
+           
+        }else{
+            arrayMain.append(arrayBlue[indexPath.row])
+            arrayBlue.remove(at: indexPath.row)
         }
         mainCV.reloadData()
         redCollection.reloadData()
         blueCollection.reloadData()
     }
-    
-
-    
     @IBOutlet weak var mainCV: UICollectionView!
     
     @IBOutlet weak var blueCollection: UICollectionView!
@@ -71,13 +78,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         redCollection.delegate = self
         redCollection.dataSource = self
         
-        
-        for _ in 0 ... 100 {
+        for _ in 0 ... 24 {
             arrayMain.append(Int.random(in: 0...1))
         }
     }
-
-
-
-
 }
