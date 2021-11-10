@@ -66,9 +66,7 @@ class ViewController: UIViewController,UICollectionViewDataSource , UICollection
                     firstArray.remove(at: indexPath.row)
                 }
                
-                CollectionView1.reloadData()
-                CollectionView2.reloadData()
-                CollectionView3.reloadData()
+              
                 
                 print(cell2.FirstLabel.text!)
                 print(secondArray)
@@ -86,10 +84,7 @@ class ViewController: UIViewController,UICollectionViewDataSource , UICollection
                 
             
             
-               
-                CollectionView1.reloadData()
-                CollectionView2.reloadData()
-                CollectionView3.reloadData()
+              
                 
                
         }
@@ -105,15 +100,16 @@ class ViewController: UIViewController,UICollectionViewDataSource , UICollection
             
                
                
-                CollectionView1.reloadData()
-                CollectionView2.reloadData()
-                CollectionView3.reloadData()
+               
                 
                
                 
             
             
         }
+        CollectionView1.reloadData()
+        CollectionView2.reloadData()
+        CollectionView3.reloadData()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
