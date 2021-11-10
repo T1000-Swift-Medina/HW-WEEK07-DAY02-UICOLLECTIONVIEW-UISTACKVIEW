@@ -31,18 +31,19 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         if collectionView == mainCollectionView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellID", for: indexPath) as! CollectionViewCell
-            cell.layer.cornerRadius = 25
             cell.lbl.text = array[indexPath.row]
             
             return cell
             
         } else if collectionView == greenCollectionView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellID2", for: indexPath) as! CollectionView2
+            cell.layer.cornerRadius = 25
             cell.lbl2.text = greenArray[indexPath.row]
             return cell
             
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellID3", for: indexPath) as! CollectionView3
+            cell.layer.cornerRadius = 25
             cell.lbl3.text = redArray[indexPath.row]
 
             return cell
@@ -53,30 +54,35 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if collectionView == mainCollectionView {
-            array.remove(at: indexPath.row)
             
             if array[indexPath.row] == "🟢" {
                 greenArray.append("🟢")
                 greenCollectionView.reloadData()
-                collectionView.reloadData()
+                mainCollectionView.reloadData()
+                array.remove(at: indexPath.row)
 
-            } else {
+            } else  {
                 redArray.append("🔴")
                 redCollectionView.reloadData()
-                collectionView.reloadData()
+                mainCollectionView.reloadData()
+                array.remove(at: indexPath.row)
+
             }
             
        } else if (collectionView == greenCollectionView ) {
            
-//            if array[indexPath.row] == "🟢" {
-//                greenArray.append("🟢" )
-//                collectionView.reloadData()
-//            }
+            if array[indexPath.row] == "🟢" {
+                greenArray.append("🟢" )
+                collectionView.reloadData()
+            } else {
+                greenArray.append("🔴")
+                redCollectionView.reloadData()
+            }
             
         } else {
             
-//            greenArray.append("🔴")
-//            redCollectionView.reloadData()
+            greenArray.append("🔴")
+            redCollectionView.reloadData()
         }
     }
     
@@ -92,6 +98,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         redCollectionView.delegate = self
         redCollectionView.dataSource = self
+        
         array.shuffle()
         
     }
