@@ -91,7 +91,6 @@
                                                         </collectionViewCellContentView>
                                                         <connections>
                                                             <outlet property="label2" destination="TWU-9m-alh" id="9pL-mv-Th6"/>
-                                                            <outlet property="label3" destination="TWU-9m-alh" id="mJa-Ub-fTq"/>
                                                         </connections>
                                                     </collectionViewCell>
                                                 </cells>
@@ -127,7 +126,6 @@
                                                         </collectionViewCellContentView>
                                                         <color key="backgroundColor" red="0.53333333329999999" green="0.87843137250000003" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <connections>
-                                                            <outlet property="label2" destination="Ykw-l0-Trk" id="hOf-P6-8TZ"/>
                                                             <outlet property="label3" destination="Ykw-l0-Trk" id="2cL-9X-yDp"/>
                                                         </connections>
                                                     </collectionViewCell>
@@ -151,7 +149,7 @@
                     <connections>
                         <outlet property="CollectionBlue" destination="KuR-Le-wWn" id="sgX-Ug-aMV"/>
                         <outlet property="CollectionRed" destination="2tO-Ra-TVL" id="sxr-NJ-S4X"/>
-                        <outlet property="CollectionView11" destination="BNj-hk-Hym" id="QxM-j3-iDG"/>
+                        <outlet property="CollectionViewOne" destination="BNj-hk-Hym" id="QxM-j3-iDG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
