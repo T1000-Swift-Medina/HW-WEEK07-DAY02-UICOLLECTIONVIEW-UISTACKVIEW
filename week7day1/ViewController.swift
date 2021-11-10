@@ -115,18 +115,15 @@ class ViewController: UIViewController,UICollectionViewDataSource , UICollection
         super.viewDidLoad()
         CollectionView1.delegate = self
         CollectionView1.dataSource = self
-//        CollectionView1.register(CollectionViewCell1.self, forCellWithReuseIdentifier: "MyCell")
-//        view.addSubview(CollectionView1)
+
 
         CollectionView2.delegate = self
         CollectionView2.dataSource = self
-//        CollectionView2.register(CollectionViewCell2.self, forCellWithReuseIdentifier: "MyCell")
-//        view.addSubview(CollectionView2)
-//
+
+
         CollectionView3.delegate = self
         CollectionView3.dataSource = self
-//        CollectionView3.register(CollectionViewCell3.self, forCellWithReuseIdentifier: "MyCell")
-//        view.addSubview(CollectionView3)
+
 }
 }
 
