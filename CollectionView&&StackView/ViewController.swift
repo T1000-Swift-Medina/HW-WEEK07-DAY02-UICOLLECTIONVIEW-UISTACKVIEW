@@ -44,14 +44,22 @@ class ViewController: UIViewController ,UICollectionViewDelegate , UICollectionV
         if collectionView == mainCv {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath ) as! mainCVCell
             cell.mainLabel.text = originArray[indexPath.row]
+            cell.layer.cornerRadius = 25
+            cell.backgroundColor = .black
             return cell
 
         } else if collectionView == greenCv{
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "greenCell", for: indexPath ) as! greenCVcell
+            cell.layer.cornerRadius = 25
+            cell.backgroundColor = .lightText
+
             return cell
 
         } else {
         let cell = redCv.dequeueReusableCell(withReuseIdentifier: "redCell", for: indexPath ) as! redCVcell
+            cell.layer.cornerRadius = 25
+            cell.backgroundColor = .tertiaryLabel
+
             return cell
             
         }
@@ -60,13 +68,13 @@ class ViewController: UIViewController ,UICollectionViewDelegate , UICollectionV
         if collectionView == mainCv  {
                  let cell = mainCv.cellForItem(at: indexPath) as! mainCVCell
                  
-            if cell.mainLabel.text != "🔴" {
-                     greenArray.append(String(indexPath.row))
+            if cell.mainLabel.text == "🟢" {
+                     greenArray.append("🟢")
                      originArray.remove(at: indexPath.row)
                      mainCv.reloadData()
                      greenCv.reloadData()
                  } else  {
-                         redArray.append(String(indexPath.row))
+                         redArray.append("🔴")
                          originArray.remove(at: indexPath.row)
                          mainCv.reloadData()
                      redCv.reloadData()
