@@ -60,12 +60,12 @@ class ViewController: UIViewController ,UICollectionViewDelegate , UICollectionV
         if collectionView == mainCv  {
                  let cell = mainCv.cellForItem(at: indexPath) as! mainCVCell
                  
-            if cell.mainLabel.text == "🟢" {
+            if cell.mainLabel.text != "🔴" {
                      greenArray.append(String(indexPath.row))
                      originArray.remove(at: indexPath.row)
                      mainCv.reloadData()
                      greenCv.reloadData()
-                 } else {
+                 } else  {
                          redArray.append(String(indexPath.row))
                          originArray.remove(at: indexPath.row)
                          mainCv.reloadData()
@@ -74,7 +74,7 @@ class ViewController: UIViewController ,UICollectionViewDelegate , UICollectionV
         }
         if collectionView == greenCv  {
             
-            originArray.append(String(indexPath.row))
+            originArray.append("🟢")
             greenArray.remove(at: indexPath.row)
             mainCv.reloadData()
             greenCv.reloadData()
@@ -82,7 +82,7 @@ class ViewController: UIViewController ,UICollectionViewDelegate , UICollectionV
         
         if collectionView == redCv  {
         
-            originArray.append(String(indexPath.row))
+            originArray.append("🔴")
             redArray.remove(at: indexPath.row)
             mainCv.reloadData()
             redCv.reloadData()
