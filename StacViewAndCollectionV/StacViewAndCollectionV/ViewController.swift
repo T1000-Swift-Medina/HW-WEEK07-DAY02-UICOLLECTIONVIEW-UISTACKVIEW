@@ -48,14 +48,19 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         case mainCollection:
             let item = mainCollection.dequeueReusableCell(withReuseIdentifier: "mainCellID", for: indexPath) as! MainCell
             item.lable.text = "\(mainArray[indexPath.row])"
+            item.layer.cornerRadius = 25
             return item
         case evenCollection:
             let item = evenCollection.dequeueReusableCell(withReuseIdentifier: "evenCellID", for: indexPath) as! EvenCell
             item.evenLbl.text = (String(evenArray[indexPath.row]))
+            item.layer.cornerRadius = 25
+            item.backgroundColor = .white
             return item
         case oddCollection:
             let item = oddCollection.dequeueReusableCell(withReuseIdentifier: "oddCellID", for: indexPath) as! OddCell
             item.oddLbl.text = String(oddArray[indexPath.row])
+            item.layer.cornerRadius = 25
+            item.backgroundColor = .white
             return item
         default:
             return mainCollection.dequeueReusableCell(withReuseIdentifier: "mainCellID", for: indexPath)
@@ -86,7 +91,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             
         case oddCollection : // Note: remove not work untill i fixed the constraints
             
-            print("\(oddArray[indexPath.row]) is selected")
             mainArray.append(oddArray[indexPath.row])
             oddArray.remove(at: indexPath.row)
 

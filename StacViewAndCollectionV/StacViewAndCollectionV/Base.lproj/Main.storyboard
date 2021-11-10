@@ -27,11 +27,11 @@
                                             <size key="itemSize" width="128" height="128"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="mainCellID" id="J2b-CK-skc" customClass="MainCell" customModule="StacViewAndCollectionV" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                <rect key="frame" x="10" y="10" width="128" height="128"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="2YB-Sr-62j">
                                                     <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
@@ -65,26 +65,24 @@
                                                     <size key="itemSize" width="128" height="128"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="oddCellID" id="paL-n2-aa5" customClass="OddCell" customModule="StacViewAndCollectionV" customModuleProvider="target">
-                                                        <rect key="frame" x="39" y="0.0" width="128.5" height="52.5"/>
+                                                        <rect key="frame" x="39" y="10" width="128" height="128"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="gKr-7J-65h">
-                                                            <rect key="frame" x="0.0" y="0.0" width="128.5" height="52.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gpb-1n-seP">
-                                                                    <rect key="frame" x="43.5" y="16" width="41.5" height="20.5"/>
+                                                                    <rect key="frame" x="43.5" y="54" width="41.5" height="20.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
                                                             <constraints>
-                                                                <constraint firstItem="gpb-1n-seP" firstAttribute="top" secondItem="gKr-7J-65h" secondAttribute="topMargin" constant="8" id="EPU-jB-9CI"/>
-                                                                <constraint firstItem="gpb-1n-seP" firstAttribute="leading" secondItem="gKr-7J-65h" secondAttribute="leadingMargin" constant="35.5" id="GF1-uk-oQb"/>
                                                                 <constraint firstItem="gpb-1n-seP" firstAttribute="centerY" secondItem="gKr-7J-65h" secondAttribute="centerY" id="NKc-Uj-Drq"/>
                                                                 <constraint firstItem="gpb-1n-seP" firstAttribute="centerX" secondItem="gKr-7J-65h" secondAttribute="centerX" id="gkh-WY-lvs"/>
                                                             </constraints>
@@ -102,11 +100,11 @@
                                                     <size key="itemSize" width="128" height="128"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="evenCellID" id="noi-49-3mr" customClass="EvenCell" customModule="StacViewAndCollectionV" customModuleProvider="target">
-                                                        <rect key="frame" x="39" y="0.0" width="128" height="128"/>
+                                                        <rect key="frame" x="39" y="10" width="128" height="128"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="kbw-Qw-npb">
                                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
