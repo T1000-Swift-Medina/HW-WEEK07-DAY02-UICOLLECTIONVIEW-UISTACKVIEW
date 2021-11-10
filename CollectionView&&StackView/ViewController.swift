@@ -69,10 +69,24 @@ class ViewController: UIViewController ,UICollectionViewDelegate , UICollectionV
                          redArray.append(String(indexPath.row))
                          originArray.remove(at: indexPath.row)
                          mainCv.reloadData()
-                         redCv.reloadData()
-                 }}
+                     redCv.reloadData()
+                 }
+        }
+        if collectionView == greenCv  {
+            
+            originArray.append(String(indexPath.row))
+            greenArray.remove(at: indexPath.row)
+            mainCv.reloadData()
+            greenCv.reloadData()
+        }
         
-        print(redArray,greenArray)
+        if collectionView == redCv  {
+        
+            originArray.append(String(indexPath.row))
+            redArray.remove(at: indexPath.row)
+            mainCv.reloadData()
+            redCv.reloadData()
+        }
 
 
                
