@@ -93,24 +93,20 @@ class ViewController: UIViewController, UICollectionViewDelegate , UICollectionV
         
           if collectionView == rightCollection{
               
-                rightArr.append(allCheckArr[indexPath.row])
-                allCheckArr.remove(at: indexPath.row)
+              allCheckArr.append(rightArr[indexPath.row])
+              rightArr.remove(at: indexPath.row)
                 
                 
             }else if  collectionView == leftCollection{
             
-                falseArr.append(allCheckArr[indexPath.row])
-                allCheckArr.remove(at: indexPath.row)
+                allCheckArr.append(falseArr[indexPath.row])
+                falseArr.remove(at: indexPath.row)
             }
         else  {
             
                  if (allCheckArr[indexPath.row] == 1 ){
-                     
-                     
                 rightArr.append(allCheckArr[indexPath.row])
                 allCheckArr.remove(at: indexPath.row)
-                
-                
                 
             }
                  else  {
