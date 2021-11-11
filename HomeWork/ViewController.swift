@@ -71,18 +71,21 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             
        } else if (collectionView == greenCollectionView ) {
            
-            if array[indexPath.row] == "🟢" {
-                greenArray.append("🟢" )
-                collectionView.reloadData()
-            } else {
-                greenArray.append("🔴")
-                redCollectionView.reloadData()
-            }
+           if greenArray[indexPath.row] == "🟢" {
+               array.append("🟢")
+               greenCollectionView.reloadData()
+               mainCollectionView.reloadData()
+               greenArray.remove(at: indexPath.row)
+           }
             
         } else {
             
-            greenArray.append("🔴")
-            redCollectionView.reloadData()
+            if redArray[indexPath.row] == "🔴" {
+                array.append("🔴")
+                redCollectionView.reloadData()
+                mainCollectionView.reloadData()
+                redArray.remove(at: indexPath.row)
+            }
         }
     }
     
