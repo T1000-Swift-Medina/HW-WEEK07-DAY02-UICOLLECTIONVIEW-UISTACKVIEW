@@ -47,20 +47,28 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         switch collectionView { // ToDo: var item then one return
         case mainCollection:
             let item = mainCollection.dequeueReusableCell(withReuseIdentifier: "mainCellID", for: indexPath) as! MainCell
-            item.lable.text = "\(mainArray[indexPath.row])"
+            let itemContent = mainArray[indexPath.row]
+            item.lable.text = "\(itemContent)"
             item.layer.cornerRadius = 25
+            
+            // change cell color depends on even or odd
+            if itemContent % 2 == 0 {
+                item.backgroundColor = .green
+            }else {
+                item.backgroundColor = .blue
+            }
             return item
         case evenCollection:
             let item = evenCollection.dequeueReusableCell(withReuseIdentifier: "evenCellID", for: indexPath) as! EvenCell
             item.evenLbl.text = (String(evenArray[indexPath.row]))
             item.layer.cornerRadius = 25
-            item.backgroundColor = .white
+            item.backgroundColor = .green
             return item
         case oddCollection:
             let item = oddCollection.dequeueReusableCell(withReuseIdentifier: "oddCellID", for: indexPath) as! OddCell
             item.oddLbl.text = String(oddArray[indexPath.row])
             item.layer.cornerRadius = 25
-            item.backgroundColor = .white
+            item.backgroundColor = .blue
             return item
         default:
             return mainCollection.dequeueReusableCell(withReuseIdentifier: "mainCellID", for: indexPath)
