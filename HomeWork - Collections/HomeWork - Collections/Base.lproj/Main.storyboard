@@ -68,6 +68,10 @@
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
+                                                <imageView key="backgroundView" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Football-goal-score" id="HLP-bU-uAd">
+                                                    <rect key="frame" x="0.0" y="0.0" width="207" height="409"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                                 <cells>
                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="soccerCellID" id="fkx-9r-1Fq" customClass="MyCollCell" customModule="HomeWork___Collections" customModuleProvider="target">
                                                         <rect key="frame" x="39.5" y="0.0" width="128" height="128"/>
@@ -96,13 +100,17 @@
                                             </collectionView>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1Jv-Ss-pMv">
                                                 <rect key="frame" x="207" y="0.0" width="207" height="409"/>
-                                                <color key="backgroundColor" red="0.82666534185409546" green="0.89318627119064331" blue="0.80415982007980347" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="0.92445391416549683" green="0.7639046311378479" blue="0.61859416961669922" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="cWH-jf-kzy">
                                                     <size key="itemSize" width="128" height="128"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
+                                                <imageView key="backgroundView" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="istockphoto-1178074437-612x612" id="67E-iJ-VQK">
+                                                    <rect key="frame" x="0.0" y="0.0" width="207" height="409"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                                 <cells>
                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="basketCellID" id="lH3-vq-Isg" customClass="MyCollCell" customModule="HomeWork___Collections" customModuleProvider="target">
                                                         <rect key="frame" x="39.5" y="0.0" width="128" height="128"/>
@@ -152,10 +160,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0kr-P4-gd8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1161" y="26"/>
+            <point key="canvasLocation" x="-1162.3188405797102" y="25.446428571428569"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Football-goal-score" width="640" height="410"/>
+        <image name="istockphoto-1178074437-612x612" width="612" height="408"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
