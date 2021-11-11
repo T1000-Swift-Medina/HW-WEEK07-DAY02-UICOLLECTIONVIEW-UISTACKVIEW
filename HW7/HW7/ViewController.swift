@@ -35,6 +35,8 @@ class ViewController: UIViewController, UICollectionViewDelegate,UICollectionVie
     
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        if collectionView == CollWhait{
     
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellID", for: indexPath) as! CustomCell
             if (arrmin [indexPath.row] == 0){
@@ -42,27 +44,35 @@ class ViewController: UIViewController, UICollectionViewDelegate,UICollectionVie
             return cell
         } else {
             cell.Lable1.text = "👗"
-            return cell}
-        else if collectionView == CollBlue{
+            
+        }
+            return cell
+            
+        }else if collectionView == CollBlue {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BlueID", for: indexPath) as! CustomCell
-            cell.Lable1.text = "👗"
+            cell.BlueLable.text = "👗"
             return cell
         }else {
-            cell.Lable1.text = "👒"
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GreenID", for: indexPath) as! CustomCell
+            cell.GreenLable.text = "👒"
             return cell
         }
             
                 
-            }
+        }
+        
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == CollWhait{
             print("indexPath:\(indexPath.row) main array : \(arrmin[indexPath.row])")
             if (arrmin[indexPath.row] == 0){
-                arrBlue.append(arrmin[indexPath.row])
-                arrmin.remove(at: indexPath.row)
-            } else {
                 arrGreen.append(arrmin[indexPath.row])
                 arrmin.remove(at: indexPath.row)
+               
+            } else {
+                arrBlue.append(arrmin[indexPath.row])
+                arrmin.remove(at: indexPath.row)
+                }
             } else if collectionView == CollBlue{
                 arrmin.append(arrBlue[indexPath.row])
                 arrBlue.remove(at: indexPath.row)
@@ -70,10 +80,13 @@ class ViewController: UIViewController, UICollectionViewDelegate,UICollectionVie
                 arrmin.append(arrGreen[indexPath.row])
                 arrGreen.remove(at: indexPath.row)
             }
-        }
-            
+        
+        CollWhait.reloadData()
+        CollBlue.reloadData()
+        CollGreen.reloadData()
+        
     }
-    
+        
     override func viewDidLoad() {
            super.viewDidLoad()
            // Do any additional setup after loading the view
@@ -85,9 +98,12 @@ class ViewController: UIViewController, UICollectionViewDelegate,UICollectionVie
         CollWhait.delegate = self
         CollWhait.dataSource = self
         
-   }
-    
-        
+        for _ in 1...100{
+            arrmin.append(Int.random(in: 0...1))
+        }
+    }
+}
+
     
         
     
@@ -217,3 +233,4 @@ class ViewController: UIViewController, UICollectionViewDelegate,UICollectionVie
 //        }
 //    }
     
+
