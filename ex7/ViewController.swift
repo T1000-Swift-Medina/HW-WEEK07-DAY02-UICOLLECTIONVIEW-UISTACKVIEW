@@ -34,6 +34,7 @@ class ViewController: UIViewController , UICollectionViewDelegate , UICollection
             let oreangleft = collectionView.dequeueReusableCell(withReuseIdentifier: "leftballs", for: indexPath) as! myCollectionViewCell
             oreangleft.orange.text = "🌚"
             return oreangleft
+            
         } else {
             let yellowright = collectionView.dequeueReusableCell(withReuseIdentifier: "rightballs", for: indexPath) as! myCollectionViewCell
             yellowright.yellow.text = "🌞"
