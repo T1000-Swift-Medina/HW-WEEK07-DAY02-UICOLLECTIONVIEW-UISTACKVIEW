@@ -13,7 +13,7 @@ class ViewController: UIViewController, UICollectionViewDelegate , UICollectionV
     var blueArr =  [Int]()
     var redArr = [Int]()
     
- 
+    
     @IBOutlet weak var CVtop: UICollectionView!
     
     @IBOutlet weak var rightCollection: UICollectionView!
@@ -25,12 +25,14 @@ class ViewController: UIViewController, UICollectionViewDelegate , UICollectionV
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        if collectionView == CVtop {
-            return allBallArr.count
-        } else if collectionView == rightCollection  {
+        
+        if collectionView == rightCollection  {
+           return blueArr.count
+       }
+         else if collectionView == leftCollection {
             return redArr.count
-        } else {
-            return blueArr.count
+        }else {
+            return allBallArr.count
         }
     }
     
@@ -39,92 +41,115 @@ class ViewController: UIViewController, UICollectionViewDelegate , UICollectionV
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
+        
         if collectionView == rightCollection {
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "rightID", for: indexPath) as! Top
-            cell.titleRight.text = "🔵"
+            let cellRight = collectionView.dequeueReusableCell(withReuseIdentifier: "rightID", for: indexPath) as! Top
+            
+            if (blueArr[indexPath.row] == 0) {
+                cellRight.titleRight.text = "🔴"
+                return cellRight
+            }else {
+                cellRight.titleRight.text = "🔵"
+            }
 
-                return cell
+            return cellRight
         }
         else if collectionView == leftCollection {
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "leftID", for: indexPath) as! Top
+            let cellLeft = collectionView.dequeueReusableCell(withReuseIdentifier: "leftID", for: indexPath) as! Top
             
-        cell.titleLeft.text = "🔴"
-
-                return cell
-                }
-        
-        else {
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "topCell", for: indexPath) as! Top
-                if (allBallArr[indexPath.row] == 0) {
-                   
-                    cell.title.text = " 🔴"
-                    return cell
-
-                    
-                    
-                
-                }else if (allBallArr[indexPath.row] == 1) {
-                    
-                    
-                    cell.title.text = " 🔵"
-                    return cell
-//
-                }
-                
-                cell.title.text = String(allBallArr[indexPath.row])
-                return cell
+            if (redArr[indexPath.row] == 0) {
+                cellLeft.titleLeft.text = "🔴"
+            }else {
+                cellLeft.titleLeft.text = "🔵"
             }
+
+            
+            
+            
+            return cellLeft
         }
         
+        else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "topCell", for: indexPath) as! Top
+            if (allBallArr[indexPath.row] == 0) {
+                cell.title.text = " 🔴"
+            }else if (allBallArr[indexPath.row] == 1) {
+                cell.title.text = " 🔵"
+            }
+            return cell
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-    
-    
-    
-    
-    
-        func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-            
-            if collectionView == CVtop {
-                redArr.append(allBallArr[indexPath.row])
-                allBallArr.remove(at: indexPath.row)
-            }else {
-                
+          if collectionView == rightCollection{
                 blueArr.append(allBallArr[indexPath.row])
                 allBallArr.remove(at: indexPath.row)
                 
-            }
                 
-
+            }else if  collectionView == leftCollection{
+                
+                
+                
+                redArr.append(allBallArr[indexPath.row])
+                allBallArr.remove(at: indexPath.row)
+            }
+        else  {
             
-            CVtop.reloadData()
-            rightCollection.reloadData()
-            leftCollection.reloadData()
-
+                 if (allBallArr[indexPath.row] == 1 ){
+                blueArr.append(allBallArr[indexPath.row])
+                allBallArr.remove(at: indexPath.row)
+                
+                
+                
+            }
+                 else  {
+                redArr.append(allBallArr[indexPath.row])
+                allBallArr.remove(at: indexPath.row)
+                
+                
+                
+            }
+            
         }
         
         
+        CVtop.reloadData()
+        rightCollection.reloadData()
+        leftCollection.reloadData()
         
+    }
     
-
-        override func viewDidLoad() {
-            super.viewDidLoad()
-           
-            
-            
-            CVtop.delegate = self
-            CVtop.dataSource = self
-            rightCollection.delegate = self
-            rightCollection.dataSource = self
-            leftCollection.delegate = self
-            leftCollection.dataSource = self
-            
-   
-            
-            for _ in 0 ... 100 {
-                allBallArr.append(Int.random(in: 0...1))
-            }
-        }}
-
-
     
+    
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        
+        
+        CVtop.delegate = self
+        CVtop.dataSource = self
+        rightCollection.delegate = self
+        rightCollection.dataSource = self
+        leftCollection.delegate = self
+        leftCollection.dataSource = self
+        
+        
+        
+        for _ in 0 ... 48 {
+            allBallArr.append(Int.random(in: 0...1))
+        }
+    }
+    
+}
+
+
+
