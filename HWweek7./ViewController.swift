@@ -44,15 +44,13 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
                 cell.title.text = "🔵"
                 return cell
             }
-        }
-        
-        if collectionView == CollectionBlue {
+        } else if collectionView == CollectionBlue {
             let cellBlue = collectionView.dequeueReusableCell(withReuseIdentifier: "BlueID", for: indexPath)as! CollectionViewCell
             
             cellBlue.blueTitle.text = "🔵"
             return cellBlue
         } else {
-            let cellRed = collectionView.dequeueReusableCell(withReuseIdentifier: "RedeID", for: indexPath)as! CollectionViewCell
+            let cellRed = collectionView.dequeueReusableCell(withReuseIdentifier: "RedID", for: indexPath)as! CollectionViewCell
             cellRed.titleRed.text = "🔴"
             
             return cellRed
@@ -93,11 +91,10 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         CollectionRed.delegate = self
         CollectionRed.dataSource = self
         CollectionBlue.delegate = self
-        CollectionBlue.delegate = self
+        CollectionBlue.dataSource = self
 
         for _ in 0...50 {
-            let rand = Int.random(in: 0...1)
-            mainarr.append(rand)
+            mainarr.append(Int.random(in: 0...1))
         }
     }
 }
